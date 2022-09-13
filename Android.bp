@@ -1,0 +1,12 @@
+package {
+    // See: http://go/android-license-faq
+    default_applicable_licenses: ["Android-Apache-2.0"],
+}
+
+android_app_import {
+    name: "CarMediaApp",
+    apk: "CarMediaApp.apk",
+    privileged: true,
+    certificate: "platform", // Media must be signed by the platform
+    required: ["allowed_privapp_com.android.car.media"],
+}
