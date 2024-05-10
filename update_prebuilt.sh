@@ -10,7 +10,7 @@ then
 fi
 
 function downloadApp {
-    TARGET=car_apps-user
+    TARGET=car_apps_gradle-all
     # See go/fetch_artifact for details on fetch_artifact. To install it use:
     # sudo glinux-add-repo android stable && \
     # sudo apt update && \
@@ -18,12 +18,12 @@ function downloadApp {
 
     CMD="fetch_artifact --bid $1 --target $TARGET --use_oauth2"
 
-    $CMD $2 $2
+    $CMD $2 $3
 }
 
 
 cd $(dirname $0)
 
-downloadApp $1 "CarMediaApp.apk"
+downloadApp $1 "CarMediaApp_aaos_cert.apk" "CarMediaApp.apk"
 
 echo "Done. Don't forget to test and commit the new artifact."
